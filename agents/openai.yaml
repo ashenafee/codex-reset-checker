@@ -1,0 +1,4 @@
+interface:
+  display_name: "Reset Checker"
+  short_description: "Check Codex reset-credit expiry times"
+  default_prompt: "Use $codex-reset-checker to show when my banked Codex reset credits expire."

@@ -1,0 +1,44 @@
+[project]
+name = "codex-reset-checker"
+version = "0.1.0"
+description = "Check banked Codex reset-credit expiry timestamps."
+readme = "README.md"
+authors = [
+    { name = "Ashenafee Mandefro", email = "ashenafeem@gmail.com" }
+]
+keywords = ["codex", "rate-limit"]
+requires-python = ">=3.12"
+dependencies = [
+    "tzdata; sys_platform == 'win32'",
+]
+
+[project.scripts]
+codex-reset-checker = "codex_reset_checker.cli:main"
+
+[build-system]
+requires = ["uv_build>=0.11.16,<0.12.0"]
+build-backend = "uv_build"
+
+[dependency-groups]
+dev = [
+    "pre-commit",
+    "pytest>=9.1.1",
+    "ruff>=0.15.20",
+]
+
+[project.urls]
+Homepage = "https://github.com/ashenafee/codex-reset-checker"
+Repository = "https://github.com/ashenafee/codex-reset-checker"
+Issues = "https://github.com/ashenafee/codex-reset-checker/issues"
+
+[tool.pytest.ini_options]
+addopts = "-q"
+testpaths = ["tests"]
+
+[tool.ruff]
+line-length = 80
+target-version = "py312"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B", "SIM"]
+ignore = []
